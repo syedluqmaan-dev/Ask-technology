@@ -134,8 +134,8 @@ a.card { text-decoration: none; color: inherit; }
 .mega-link { display: flex; gap: 14px; padding: 12px; border-radius: 12px; text-decoration: none; color: var(--ink); }
 .mega-link:hover { background: var(--tint); color: var(--ink); }
 .mega-link .ico { width: 42px; height: 42px; border-radius: 12px; }
-.mega-link b { display: block; font-size: 15px; }
-.mega-link span { display: block; font-size: 13.5px; color: var(--muted); line-height: 1.45; margin-top: 2px; }
+.mega-link > span:last-child > b { display: block; font-size: 15px; }
+.mega-link > span:last-child > span { display: block; font-size: 13.5px; color: var(--muted); line-height: 1.45; margin-top: 2px; }
 .mega-feature { border-radius: 16px; background: linear-gradient(150deg, var(--tint-2), #fff); border: 1px solid var(--line); padding: 20px; display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: var(--ink); }
 .mega-feature img { border-radius: 10px; background: #fff; aspect-ratio: 16/9; object-fit: contain; }
 .mega-feature:hover { border-color: var(--line-2); color: var(--ink); }
@@ -220,7 +220,8 @@ a.card { text-decoration: none; color: inherit; }
 .ex-item:hover { border-color: var(--line-2); }
 .ex-item[aria-selected="true"] { border-color: var(--indigo); box-shadow: 0 0 0 3px rgba(69, 96, 208, .12); }
 .ex-item b { display: block; font-size: 16px; color: var(--ink); }
-.ex-item span { display: block; font-size: 14px; color: var(--muted); margin-top: 3px; line-height: 1.45; }
+.ex-item > span:last-child > span { display: block; font-size: 14px; color: var(--muted); margin-top: 3px; line-height: 1.45; }
+.ex-item .ico { flex: none; }
 .ex-panel { border-radius: 22px; border: 1px solid var(--line); background: linear-gradient(160deg, #fff 0%, var(--tint) 100%); padding: 28px; display: flex; flex-direction: column; gap: 18px; }
 .ex-panel img { width: 100%; aspect-ratio: 16/9; object-fit: contain; border-radius: 14px; background: #fff; border: 1px solid var(--line); }
 .ex-panel .hl { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; list-style: none; padding: 0; font-size: 14.5px; font-weight: 600; }
