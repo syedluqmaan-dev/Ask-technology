@@ -4,6 +4,7 @@ import { ClientLogos } from "@/components/ClientLogos";
 import { ProductExplorer } from "@/components/ProductExplorer";
 import { DemoBand } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
+import { HeroVideo } from "@/components/HeroVideo";
 import { CaseCard, PostCard } from "@/components/Cards";
 import { Arrow, Check, Icon } from "@/components/Icons";
 import { getProduct } from "@/data/products";
@@ -61,17 +62,7 @@ export default function Home() {
           </div>
           <div className="hero-visual">
             <div className="hero-shot">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/images/projects/erp-mockup.png" alt="TARGET ERP dashboard on laptop, tablet and phone" fetchPriority="high" />
-            </div>
-            <div className="float f2" aria-hidden="true">
-              <div style={{ display: "flex", justifyContent: "space-between" }}><b>PO-2418 · Knit polo</b><span style={{ color: "#2C3E9E", fontWeight: 700 }}>4/6</span></div>
-              <div className="bars">{["#4560D0", "#3B78D6", "#2A89DA", "#1C97DD", "", ""].map((c, i) => <i key={i} style={c ? { background: c } : undefined} />)}</div>
-              <div style={{ marginTop: 8, color: "#5B6680" }}>In production · on track</div>
-            </div>
-            <div className="float f1" aria-hidden="true">
-              <span className="ico" style={{ width: 38, height: 38, borderRadius: 11, background: "#E7F6EE", color: "#1F7A4D" }}><Check color="#1F7A4D" /></span>
-              <span><b>Inspection passed</b><br /><span style={{ color: "#5B6680" }}>AQL 2.5 · synced from offline</span></span>
+              <HeroVideo />
             </div>
           </div>
         </div>
