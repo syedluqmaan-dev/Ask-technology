@@ -24,7 +24,6 @@ export function DemoBand({ title = "See TARGET 360 running on your own workflow"
 }
 
 export function Footer() {
-  const a = site.address;
   return (
     <>
       <footer className="site-footer">
@@ -36,7 +35,7 @@ export function Footer() {
                 ASK Technology builds TARGET 360, the AI-powered ERP for garment manufacturers, exporters, buying houses and fashion brands. Total Enterprise Solution.
               </p>
               <address>
-                {a.street}, {a.city}, {a.region} {a.postalCode}
+                Kodambakkam Railway Station, Kodambakkam, Chennai, Tamil Nadu 600024
                 <br />
                 <a href={`mailto:${site.email}`}>{site.email}</a>
                 <br />

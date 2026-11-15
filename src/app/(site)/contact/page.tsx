@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   const a = site.address;
   return (
-    <section style={{ padding: "64px 0 96px", background: "linear-gradient(180deg, #F3F8FE 0%, #fff 60%)" }}>
+    <section className="contact-page">
       <div className="wrap">
         <nav className="crumbs" aria-label="Breadcrumb"><Link href="/">Home</Link> / <span aria-current="page">Contact us</span></nav>
-        <h1 className="h1" style={{ fontSize: 52 }}>We are here to help you</h1>
+        <h1 className="h1">We are here to help you</h1>
         <p className="lead mt-m mb-l" style={{ maxWidth: 640 }}>Questions about TARGET 360, pricing or support? Call, write or send us a message.</p>
         <div className="split top">
           <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
