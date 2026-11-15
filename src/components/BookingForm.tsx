@@ -61,7 +61,7 @@ export function BookingForm() {
       <div className="form" style={{ maxWidth: 640, margin: "0 auto", textAlign: "center", padding: 48 }} role="status">
         <h1 className="h2">Your demo request is in</h1>
         <p style={{ marginTop: 10, fontSize: 18, fontWeight: 700 }}>{summary}</p>
-        <p className="sub mt-s">{modLabels.join(", ") || "TARGET"}. Our team will confirm the time and send the joining link by email and WhatsApp.</p>
+        <p className="sub mt-s">{modLabels.join(", ") || "TARGET 360"}. Our team will confirm the time and send the joining link by email and WhatsApp.</p>
         <div className="btn-row mt-l" style={{ justifyContent: "center" }}>
           <button className="btn btn-ghost" onClick={() => setState("idle")}>Change time</button>
           <Link className="btn btn-primary" href="/products">Explore the products</Link>

@@ -4,7 +4,7 @@ import { Arrow, Facebook, Instagram, LinkedIn, WhatsApp, YouTube } from "./Icons
 import { site } from "@/data/site";
 import { products } from "@/data/products";
 
-export function DemoBand({ title = "See TARGET running on your own workflow", text = "Book a live demo with a product specialist. Our team replies on WhatsApp, typically within 1 hour." }: { title?: string; text?: string }) {
+export function DemoBand({ title = "See TARGET 360 running on your own workflow", text = "Book a live demo with a product specialist. Our team replies on WhatsApp, typically within 1 hour." }: { title?: string; text?: string }) {
   return (
     <section style={{ padding: "0 0 112px" }}>
       <div className="wrap">
@@ -31,9 +31,9 @@ export function Footer() {
         <div className="wrap">
           <div className="foot-grid">
             <div>
-              <Logo bg="#17213F" id="ft" />
+              <Logo id="ft" />
               <p style={{ margin: "22px 0 20px", maxWidth: 360, lineHeight: 1.65 }}>
-                ASK Technology builds TARGET, the AI-powered ERP for garment manufacturers, exporters, buying houses and fashion brands. Total Enterprise Solution.
+                ASK Technology builds TARGET 360, the AI-powered ERP for garment manufacturers, exporters, buying houses and fashion brands. Total Enterprise Solution.
               </p>
               <address>
                 {a.street}, {a.city}, {a.region} {a.postalCode}

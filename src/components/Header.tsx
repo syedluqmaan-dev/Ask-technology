@@ -137,7 +137,7 @@ function Mega({ id }: { id: Exclude<MenuKey, null> }) {
           </div>
           <Link className="mega-feature" href="/ai-solution">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/images/projects/erp-mockup.png" alt="" />
+            <img src="/images/target-360-erp-mockup.png" alt="" />
             <b style={{ fontSize: 16 }}>AI-Powered Fashion ERP</b>
             <span className="small">Smart search, techpack data conversion, smarter sales and intelligent planning.</span>
             <span className="link">Explore AI Solution <Arrow /></span>
@@ -163,7 +163,7 @@ function Mega({ id }: { id: Exclude<MenuKey, null> }) {
           </div>
           <Link className="mega-feature" href="/case-studies">
             <b style={{ fontSize: 16 }}>{caseStudies.length} customer stories</b>
-            <span className="small">How manufacturers, exporters, buying houses and brands run on TARGET.</span>
+            <span className="small">How manufacturers, exporters, buying houses and brands run on TARGET 360.</span>
             <span className="link">See all stories <Arrow /></span>
           </Link>
         </div>
@@ -176,12 +176,12 @@ function Mega({ id }: { id: Exclude<MenuKey, null> }) {
         <div className="wrap mega-cols-2">
           <div className="grid g2" style={{ gap: 4 }}>
             <Link className="mega-link" href="/insights"><span className="ico"><Icon name="layers" /></span><span><b>Insights</b><span>Articles on apparel ERP, quality, production and industry news.</span></span></Link>
-            <Link className="mega-link" href="/case-studies"><span className="ico"><Icon name="chart" /></span><span><b>Customer stories</b><span>Results from garment businesses running TARGET.</span></span></Link>
-            <Link className="mega-link" href="/products"><span className="ico"><Icon name="box" /></span><span><b>Product overview</b><span>Every TARGET product and who it is for.</span></span></Link>
+            <Link className="mega-link" href="/case-studies"><span className="ico"><Icon name="chart" /></span><span><b>Customer stories</b><span>Results from garment businesses running TARGET 360.</span></span></Link>
+            <Link className="mega-link" href="/products"><span className="ico"><Icon name="box" /></span><span><b>Product overview</b><span>Every TARGET 360 product and who it is for.</span></span></Link>
             <Link className="mega-link" href="/book-a-demo"><span className="ico"><Icon name="clock" /></span><span><b>Book a demo</b><span>A live walkthrough at a time that suits you.</span></span></Link>
           </div>
           <Link className="mega-feature" href="/contact">
-            <b style={{ fontSize: 16 }}>TARGET product brochure</b>
+            <b style={{ fontSize: 16 }}>TARGET 360 product brochure</b>
             <span className="small">All products, features and deployment options in one guide.</span>
             <span className="link">Request the brochure <Arrow /></span>
           </Link>
@@ -193,10 +193,10 @@ function Mega({ id }: { id: Exclude<MenuKey, null> }) {
     <div className="mega" id="mega-company">
       <div className="wrap mega-cols-2">
         <div className="grid g2" style={{ gap: 4 }}>
-          <Link className="mega-link" href="/about"><span className="ico"><Icon name="users" /></span><span><b>About us</b><span>25+ years of IT solutions for apparel.</span></span></Link>
+          <Link className="mega-link" href="/about"><span className="ico"><Icon name="users" /></span><span><b>About us</b><span>20+ years of IT solutions for apparel.</span></span></Link>
           <Link className="mega-link" href="/about#engagement"><span className="ico"><Icon name="chain" /></span><span><b>Engagement model</b><span>From project management to training.</span></span></Link>
           <Link className="mega-link" href="/careers"><span className="ico"><Icon name="spark" /></span><span><b>Careers</b><span>Build software that runs garment businesses.</span></span></Link>
-          <Link className="mega-link" href="/partner-with-us"><span className="ico"><Icon name="target" /></span><span><b>Partner with us</b><span>Grow with TARGET in your market.</span></span></Link>
+          <Link className="mega-link" href="/partner-with-us"><span className="ico"><Icon name="target" /></span><span><b>Partner with us</b><span>Grow with TARGET 360 in your market.</span></span></Link>
         </div>
         <Link className="mega-feature" href="/contact">
           <b style={{ fontSize: 16 }}>Visit us in Chennai</b>

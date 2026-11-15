@@ -16,7 +16,7 @@ export default function ContactPage() {
       <div className="wrap">
         <nav className="crumbs" aria-label="Breadcrumb"><Link href="/">Home</Link> / <span aria-current="page">Contact us</span></nav>
         <h1 className="h1" style={{ fontSize: 52 }}>We are here to help you</h1>
-        <p className="lead mt-m mb-l" style={{ maxWidth: 640 }}>Questions about TARGET, pricing or support? Call, write or send us a message.</p>
+        <p className="lead mt-m mb-l" style={{ maxWidth: 640 }}>Questions about TARGET 360, pricing or support? Call, write or send us a message.</p>
         <div className="split top">
           <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
             <div className="contact-card"><p className="k">Sales</p><a className="v" href={`mailto:${site.email}`}>{site.email}</a></div>

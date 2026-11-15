@@ -42,7 +42,7 @@ export function ProductExplorer() {
           ))}
           <Link href="/ai-solution" className="ex-item" style={{ textDecoration: "none" }}>
             <span className="ico"><Icon name="spark" /></span>
-            <span><b>AI-Powered Fashion ERP</b><span>AI built into every TARGET product.</span></span>
+            <span><b>AI-Powered Fashion ERP</b><span>AI built into every TARGET 360 product.</span></span>
           </Link>
         </div>
         <div className="ex-panel" id="ex-panel" role="tabpanel">

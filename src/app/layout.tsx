@@ -29,7 +29,7 @@ const manrope = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "ASK Technology | AI-Powered Garment ERP (TARGET)",
+    default: "ASK Technology | AI-Powered Garment ERP (TARGET 360)",
     template: "%s | ASK Technology",
   },
   description: site.description,
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: "ASK Technology",
     locale: "en_IN",
     url: site.url,
-    title: "ASK Technology | AI-Powered Garment ERP (TARGET)",
+    title: "ASK Technology | AI-Powered Garment ERP (TARGET 360)",
     description: site.description,
   },
   twitter: { card: "summary_large_image" },

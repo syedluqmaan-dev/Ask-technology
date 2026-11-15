@@ -5,16 +5,16 @@ import { DemoBand } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Partner With Us",
-  description: "Join the ASK Technology partner programme to grow together with TARGET, the garment ERP, and build collaborations that create lasting value.",
+  description: "Join the ASK Technology partner programme to grow together with TARGET 360, the garment ERP, and build collaborations that create lasting value.",
   alternates: { canonical: "/partner-with-us" },
 };
 
 const why = [
-  ["Get new clients", "Offer TARGET to garment businesses you already serve."],
+  ["Get new clients", "Offer TARGET 360 to garment businesses you already serve."],
   ["Reach new markets", "Take a proven apparel ERP into new regions and segments."],
   ["Grow your company", "Add a recurring product line to your services."],
   ["Boost connections", "Work alongside our team and other partners."],
-  ["Strengthen your network", "Be part of the TARGET ecosystem across the apparel industry."],
+  ["Strengthen your network", "Be part of the TARGET 360 ecosystem across the apparel industry."],
   ["Make money", "Earn on every client you bring and support."],
 ];
 

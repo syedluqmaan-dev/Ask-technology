@@ -6,17 +6,16 @@ import { DemoBand } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import { HeroVideo } from "@/components/HeroVideo";
 import { CaseCard, PostCard } from "@/components/Cards";
-import { Arrow, Check, Icon } from "@/components/Icons";
+import { Arrow, Check, Icon, productIcon } from "@/components/Icons";
 import { getProduct } from "@/data/products";
 import { caseStudies } from "@/data/caseStudies";
 import { posts } from "@/data/blog";
-import { clients } from "@/data/clients";
 import type { IconName } from "@/data/products";
 
 export const metadata: Metadata = {
   title: { absolute: "ASK Technology | AI-Powered Garment ERP for Apparel Manufacturers & Buying Houses" },
   description:
-    "TARGET is an AI-powered garment ERP built for the complete apparel lifecycle, from order and costing to production and shipment. For manufacturers, exporters, buying houses and brands.",
+    "TARGET 360 is an AI-powered garment ERP built for the complete apparel lifecycle, from order and costing to production and shipment. For manufacturers, exporters, buying houses and brands.",
   alternates: { canonical: "/" },
 };
 
@@ -33,8 +32,8 @@ const why: { icon: IconName; title: string; text: string }[] = [
   { icon: "spark", title: "AI built in", text: "Smart search, techpack conversion, capacity checks and intelligent planning." },
   { icon: "offline", title: "Works offline on the floor", text: "Inspections and data capture continue without internet and sync later." },
   { icon: "cloud", title: "Cloud and mobile", text: "Web, tablet and phone, with mobile-responsive dashboards for every role." },
-  { icon: "layers", title: "Customisable for your process", text: "From apparel manufacturers to buying houses, TARGET adapts to how you work." },
-  { icon: "users", title: "25+ years of IT solutions", text: "A Chennai team that understands both technology and the factory floor." },
+  { icon: "layers", title: "Customisable for your process", text: "From apparel manufacturers to buying houses, TARGET 360 adapts to how you work." },
+  { icon: "users", title: "20+ years of IT solutions", text: "A Chennai team that understands both technology and the factory floor." },
 ];
 
 export default function Home() {
@@ -72,11 +71,10 @@ export default function Home() {
 
       <section className="section sm">
         <div className="wrap">
-          <Reveal className="stats">
-            <div><strong className="grad-text">25+</strong><span>Years of IT solutions</span></div>
-            <div><strong className="grad-text">{clients.length}+</strong><span>Apparel businesses shown above</span></div>
-            <div><strong className="grad-text">{caseStudies.length}</strong><span>Published customer stories</span></div>
-            <div><strong className="grad-text">5 + AI</strong><span>TARGET products on one platform</span></div>
+          <Reveal className="stats r3">
+            <div><strong className="grad-text">20+</strong><span>Years of IT solutions</span></div>
+            <div><strong className="grad-text">50+</strong><span>Satisfied apparel manufacturers and exporters</span></div>
+            <div><strong className="grad-text">100+</strong><span>Projects delivered</span></div>
           </Reveal>
         </div>
       </section>
@@ -86,7 +84,7 @@ export default function Home() {
           <Reveal className="section-head center">
             <p className="eyebrow">One platform</p>
             <h2 className="h2">From order & costing to production & shipment</h2>
-            <p className="sub">Each TARGET product covers a stage of the garment order. Run them together as one suite, or start with the stage that needs it most.</p>
+            <p className="sub">From the first inquiry to final shipment, ASK Technology helps you save time, cut costs, and spot problems before they cost you money.</p>
           </Reveal>
           <div className="journey">
             <div className="track" aria-hidden="true" />
@@ -98,13 +96,45 @@ export default function Home() {
                     <span className="node"><Icon name={j.icon} size={26} /></span>
                     <span className="step">Step {i + 1}</span>
                     <h3>{j.stage}</h3>
-                    <p className="body" style={{ fontSize: 14.5 }}>{j.text}</p>
-                    <Link href={`/products/${p.slug}`} style={{ display: "inline-block", marginTop: 8 }}>{p.shortName}</Link>
+                    <p className="body" style={{ fontSize: 14.5 }}>{p.tagline}</p>
+                    <Link className="jp" href={`/products/${p.slug}`}><span className="ico"><Icon name={productIcon[p.slug]} size={16} /></span>{p.shortName}</Link>
                   </Reveal>
                 );
               })}
             </ol>
           </div>
+          <div className="across">
+            <span className="across-label">Across every stage</span>
+            {[
+              { href: "/products/target-360-hrms", icon: productIcon["target-360-hrms"], name: "TARGET 360 HRMS", text: "Handle attendance, payroll and staff records with less effort." },
+              { href: "/ai-solution", icon: "spark" as IconName, name: "AI Solutions", text: "Get early warnings on delays and cost problems, so you can act sooner." },
+            ].map((x) => (
+              <Link key={x.name} className="across-item" href={x.href}>
+                <span className="ico"><Icon name={x.icon} size={20} /></span>
+                <span><b>{x.name}</b><span>{x.text}</span></span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 24 }}>
+        <div className="wrap">
+          <Reveal className="showcase">
+            <div className="showcase-head">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className="t360" src="/images/target-360-logo.png" alt="TARGET 360" width={210} height={78} />
+              <div>
+                <h2 className="h2">Your whole business on one dashboard</h2>
+                <p className="sub" style={{ marginTop: 12 }}>Enquiries, costing, approvals, buyers and markup, live in TARGET 360. This is the real product your team will use.</p>
+              </div>
+            </div>
+            <div className="browser">
+              <div className="browser-bar" aria-hidden="true"><i /><i /><i /><span>TARGET 360 · Enquiry Performance Summary</span></div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/target-360-dashboard.png" alt="TARGET 360 enquiry performance dashboard with costing status, costing trend, markup trend and top buyers" width={1358} height={629} loading="lazy" />
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -112,7 +142,7 @@ export default function Home() {
         <div className="wrap">
           <Reveal className="head-row">
             <div>
-              <p className="eyebrow">TARGET products</p>
+              <p className="eyebrow">TARGET 360 products</p>
               <h2 className="h2">Built for the way your business works</h2>
               <p className="sub" style={{ marginTop: 16 }}>Pick your business type to see the products made for it, and the real screens your team will use.</p>
             </div>
@@ -125,7 +155,7 @@ export default function Home() {
       <section className="section">
         <div className="wrap split wide-r">
           <Reveal>
-            <p className="eyebrow">TARGET AI</p>
+            <p className="eyebrow">TARGET 360 AI</p>
             <h2 className="h2">Making fashion operations smarter with AI</h2>
             <p className="sub" style={{ margin: "18px 0 30px" }}>One AI platform from design to delivery, with live data to help you plan, track and grow.</p>
             <div className="grid g2" style={{ gap: "24px 28px" }}>
@@ -144,10 +174,10 @@ export default function Home() {
             <Link className="btn btn-ghost" style={{ marginTop: 36 }} href="/ai-solution">Explore AI Solution <Arrow /></Link>
           </Reveal>
           <Reveal delay={120}>
-            <div className="card" style={{ padding: 26, boxShadow: "var(--shadow-lg)", borderRadius: 24 }} role="img" aria-label="Asking TARGET AI which orders are at risk">
+            <div className="card" style={{ padding: 26, boxShadow: "var(--shadow-lg)", borderRadius: 24 }} role="img" aria-label="Asking TARGET 360 AI which orders are at risk">
               <div style={{ display: "flex", alignItems: "center", gap: 10, paddingBottom: 16, borderBottom: "1px solid #E2E9F3" }}>
                 <span className="ico grad" style={{ width: 34, height: 34, borderRadius: 10 }}><Icon name="spark" size={18} /></span>
-                <b style={{ fontFamily: "var(--font-head)" }}>Ask TARGET AI</b>
+                <b style={{ fontFamily: "var(--font-head)" }}>Ask TARGET 360 AI</b>
               </div>
               <p style={{ alignSelf: "flex-end", maxWidth: "82%", margin: "18px 0 14px", background: "#F3F8FE", borderRadius: "14px 14px 4px 14px", padding: "12px 16px", fontSize: 14.5 }}>
                 Which orders are at risk of missing their ship date this month?
@@ -191,7 +221,7 @@ export default function Home() {
           <Reveal className="head-row">
             <div>
               <p className="eyebrow">Customer stories</p>
-              <h2 className="h2">Garment businesses running on TARGET</h2>
+              <h2 className="h2">Garment businesses running on TARGET 360</h2>
             </div>
             <Link className="btn btn-ghost" href="/case-studies">All {caseStudies.length} stories <Arrow /></Link>
           </Reveal>

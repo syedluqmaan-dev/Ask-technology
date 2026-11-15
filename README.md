@@ -52,4 +52,4 @@ All forms post to `/api/lead`. Set `LEAD_WEBHOOK_URL` to forward each lead as JS
 
 ## Still needed from ASK
 
-CEO photo, current job openings, real social media links, privacy policy and terms text, and confirmation of the name behind the "FC" logo.
+CEO photo, current job openings, real social media links, privacy policy and terms text, confirmation of the name behind the "FC" logo, confirmation of the TARGET 360 HRMS feature list (`src/data/products.ts`), and the original TARGET 360 logo file (`public/images/target-360-logo.png` is redrawn from a small copy).

@@ -10,7 +10,7 @@ import type { IconName } from "@/data/products";
 export const metadata: Metadata = {
   title: "AI-Powered Fashion ERP",
   description:
-    "TARGET AI covers design through delivery in one system: AI-powered operations, techpack data conversion, smarter sales and intelligent planning for apparel businesses.",
+    "TARGET 360 AI covers design through delivery in one system: AI-powered operations, techpack data conversion, smarter sales and intelligent planning for apparel businesses.",
   alternates: { canonical: "/ai-solution" },
 };
 
@@ -41,17 +41,17 @@ export default function AIPage() {
           <div>
             <p className="pill" style={{ cursor: "default" }}><span>New</span>AI-Powered Fashion ERP</p>
             <h1 className="h1">Making fashion operations <span className="grad-text">smarter with AI</span></h1>
-            <p className="lead">TARGET is an AI platform that covers design through delivery in one system, with live data to help you plan, track and grow.</p>
+            <p className="lead">TARGET 360 is an AI platform that covers design through delivery in one system, with live data to help you plan, track and grow.</p>
             <div className="btn-row" style={{ marginTop: 36 }}>
               <Link className="btn btn-primary" href="/book-a-demo?product=ai-solution">Book a demo <Arrow /></Link>
               <Link className="btn btn-ghost" href="/products">Take a product tour</Link>
             </div>
             <ul className="trio"><li><Check />Secure</li><li><Check />Scalable</li><li><Check />Built for fashion</li></ul>
           </div>
-          <div className="card" style={{ padding: 26, boxShadow: "var(--shadow-lg)", borderRadius: 24 }} role="img" aria-label="TARGET AI converting a buyer techpack">
+          <div className="card" style={{ padding: 26, boxShadow: "var(--shadow-lg)", borderRadius: 24 }} role="img" aria-label="TARGET 360 AI converting a buyer techpack">
             <div style={{ display: "flex", alignItems: "center", gap: 10, paddingBottom: 16, borderBottom: "1px solid #E2E9F3" }}>
               <span className="ico grad" style={{ width: 34, height: 34, borderRadius: 10 }}><Icon name="spark" size={18} /></span>
-              <b style={{ fontFamily: "var(--font-head)" }}>TARGET AI · Techpack conversion</b>
+              <b style={{ fontFamily: "var(--font-head)" }}>TARGET 360 AI · Techpack conversion</b>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "18px 0" }}>
               <span className="ico" style={{ width: 44, height: 52, borderRadius: 8, fontSize: 12, fontWeight: 800 }}>PDF</span>
@@ -99,7 +99,7 @@ export default function AIPage() {
           <Reveal>
             <p className="eyebrow">Ready for AI?</p>
             <h2 className="h2">Are fashion businesses actually ready for AI?</h2>
-            <p className="sub" style={{ margin: "18px 0 30px" }}>Yes. TARGET AI is secure, scalable and built for fashion, so you can start with the data you already have.</p>
+            <p className="sub" style={{ margin: "18px 0 30px" }}>Yes. TARGET 360 AI is secure, scalable and built for fashion, so you can start with the data you already have.</p>
             <Link className="btn btn-ghost" href="/contact">Get the whitepaper <Arrow /></Link>
           </Reveal>
           <div className="grid g2" style={{ gap: 16 }}>

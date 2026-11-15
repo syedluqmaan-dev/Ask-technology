@@ -28,22 +28,22 @@ export type Product = {
   legacyPath: string;
 };
 
-/** ASK Technology's TARGET products. Copy is taken from asktek.net. */
+/** ASK Technology's TARGET 360 products. Copy is taken from asktek.net and ASK's product list. */
 export const products: Product[] = [
   {
     slug: "garment-erp-knit-woven",
     code: "ERP",
-    name: "Garment ERP for Knit & Woven",
-    brand: "TARGET ERP",
-    shortName: "TARGET ERP",
+    name: "TARGET 360 ERP for Manufacturers",
+    brand: "TARGET 360 ERP",
+    shortName: "TARGET 360 ERP",
     stage: "Planning & export",
     audience: "manufacturers",
     audienceLabel: "For manufacturers and exporters",
-    image: "/assets/images/projects/erp-mockup.png",
+    image: "/images/target-360-erp-mockup.png",
     headline: "Unleashing excellence in textile & garment manufacturing",
-    tagline: "Streamline production, optimise inventory and simplify export documentation.",
+    tagline: "Manage orders, production, stock and exports in one place.",
     intro:
-      "TARGET is a comprehensive ERP for textile and garment manufacturers and exporters. It streamlines production processes, optimises inventory management and simplifies export documentation, so your operations align with global standards.",
+      "TARGET 360 is a comprehensive ERP for textile and garment manufacturers and exporters. It streamlines production processes, optimises inventory management and simplifies export documentation, so your operations align with global standards.",
     highlights: ["Order to invoice in one system", "Multi-location inventory", "Real-time production tracking", "Export-ready documentation"],
     features: [
       { icon: "order", title: "Order processing", text: "Handle customer orders and fulfilment, including invoices, packing slips and shipping labels." },
@@ -55,9 +55,9 @@ export const products: Product[] = [
       { icon: "invoice", title: "Commercial invoicing", text: "Professional invoices tailored to global buyers' requirements, for smooth transactions and compliance." },
     ],
     faqs: [
-      { q: "What does TARGET ERP do for textile and garment companies?", a: "TARGET connects orders, supply chain, inventory, quality, production, finance and commercial invoicing in one system built for textile and garment manufacturers and exporters." },
-      { q: "Does TARGET ERP include inventory management?", a: "Yes. It forecasts requirements to minimise stock-outs, manages multi-location warehouses and tracks material movements from receipt to finished goods." },
-      { q: "Can TARGET ERP handle textile production processes?", a: "Yes. Production management covers raw materials, work-in-progress and finished goods with real-time monitoring and scheduling." },
+      { q: "What does TARGET 360 ERP do for textile and garment companies?", a: "TARGET 360 connects orders, supply chain, inventory, quality, production, finance and commercial invoicing in one system built for textile and garment manufacturers and exporters." },
+      { q: "Does TARGET 360 ERP include inventory management?", a: "Yes. It forecasts requirements to minimise stock-outs, manages multi-location warehouses and tracks material movements from receipt to finished goods." },
+      { q: "Can TARGET 360 ERP handle textile production processes?", a: "Yes. Production management covers raw materials, work-in-progress and finished goods with real-time monitoring and scheduling." },
       { q: "Does it help with export documentation?", a: "Yes. Commercial invoicing produces invoices and documents tailored to the requirements of global buyers." },
     ],
     fit: { manufacturers: true, buyingHouses: false, exporters: true, brands: false },
@@ -75,7 +75,7 @@ export const products: Product[] = [
     audienceLabel: "For buying houses",
     image: "/assets/images/projects/bms-mockup.png",
     headline: "Streamline vendor collaboration with Target BMS",
-    tagline: "Enhance communication and simplify vendor collaboration.",
+    tagline: "Keep your vendors, bids and orders organised without chasing emails.",
     intro:
       "Target BMS is a comprehensive business management solution for buying houses. Its modules cover buyer costing, factory orders, time and action planning, inspections, vendor bidding, invoicing and accounts, so you manage everything from orders to finances in one place.",
     highlights: ["Buyer costing and vendor bidding", "Offline inspection audits", "Projected profit on every order", "Outlet management dashboard"],
@@ -114,14 +114,14 @@ export const products: Product[] = [
     slug: "garment-inspection-software",
     code: "IOG",
     name: "Garment Inspection Software",
-    brand: "TARGET Inspection On Go",
+    brand: "TARGET 360 Inspection On Go",
     shortName: "Inspection On Go",
     stage: "Quality",
     audience: "buyingHouses",
     audienceLabel: "For QA teams, buying houses and factories",
     image: "/assets/images/projects/iog-mockup.png",
     headline: "Tailored for garment industry quality",
-    tagline: "Manage quality control effectively, reduce defects, and ensure every product meets your highest quality standards.",
+    tagline: "Check quality from your phone, even with no internet.",
     intro:
       "Inspection On Go streamlines garment inspection from order creation to quality checks. Real-time monitoring, offline capability and mobile access help manufacturers and QA teams keep standards high, even in remote or disconnected factories.",
     highlights: ["Works offline, syncs later", "Web and mobile", "Configurable quality checks", "Real-time MIS"],
@@ -134,7 +134,7 @@ export const products: Product[] = [
       { icon: "mobile", title: "Web and mobile, in sync", text: "Inspect on mobile, review on the web; the sync feature keeps every record up to date with no data loss." },
     ],
     faqs: [
-      { q: "What is TARGET Inspection On Go?", a: "A garment inspection solution covering buyer orders, factory orders, inspection audits and real-time MIS reporting, on web and mobile." },
+      { q: "What is TARGET 360 Inspection On Go?", a: "A garment inspection solution covering buyer orders, factory orders, inspection audits and real-time MIS reporting, on web and mobile." },
       { q: "Is it available on mobile devices?", a: "Yes. Inspections are done on mobile and the data is available on the web platform after syncing." },
       { q: "Can it work without an internet connection?", a: "Yes. Inspections are recorded offline and synced automatically once the device is back online, with no data loss." },
       { q: "Does it provide real-time inspection reports?", a: "Yes. Target MIS gives real-time, end-to-end traceability from buyer order to factory order and inspection status." },
@@ -146,17 +146,17 @@ export const products: Product[] = [
   {
     slug: "garment-erp-brands",
     code: "PLM",
-    name: "Garment ERP for Brands",
-    brand: "TARGET Garments Sampling",
-    shortName: "ERP for Brands",
+    name: "TARGET 360 ERP for Brands",
+    brand: "TARGET 360 ERP for Brands",
+    shortName: "TARGET 360 for Brands",
     stage: "Sampling & development",
     audience: "buyingHouses",
     audienceLabel: "For fashion brands",
     image: "/assets/images/projects/mockup-sampling.png",
     headline: "Streamlining the sampling process in the apparel industry",
-    tagline: "Automate and optimise sampling, connected to purchasing, inventory, production and delivery.",
+    tagline: "Track every sample from request to delivery, with fewer mistakes.",
     intro:
-      "Managing samples manually leads to miscommunication and costly errors. TARGET automates the entire sampling process and connects it with purchasing, inventory, production and delivery, so sample specifications stay aligned with bulk orders.",
+      "Managing samples manually leads to miscommunication and costly errors. TARGET 360 automates the entire sampling process and connects it with purchasing, inventory, production and delivery, so sample specifications stay aligned with bulk orders.",
     highlights: ["Accurate sample costing", "Pooled purchase orders", "Barcode material tracking", "Material reconciliation"],
     features: [
       { icon: "tag", title: "Sampling costing", text: "Fabric, trims, colour and size variations and special instructions in one accurate cost structure." },
@@ -170,7 +170,7 @@ export const products: Product[] = [
     faqs: [
       { q: "How does it reduce time-to-market and sampling costs?", a: "Costing, sample orders, purchasing, inventory and production are connected, so samples are created right the first time and materials are bought in pooled orders." },
       { q: "How is material usage controlled?", a: "Materials are tracked by barcode from receipt to production, and the reconciliation report compares purchases with consumption and leftover stock." },
-      { q: "Does it connect sampling with bulk production?", a: "Yes. Sample specifications flow into the rest of TARGET so bulk orders match what was approved." },
+      { q: "Does it connect sampling with bulk production?", a: "Yes. Sample specifications flow into the rest of TARGET 360 so bulk orders match what was approved." },
     ],
     fit: { manufacturers: true, buyingHouses: true, exporters: false, brands: true },
     related: ["buying-house-management", "garment-inspection-software", "garment-erp-knit-woven"],
@@ -187,7 +187,7 @@ export const products: Product[] = [
     audienceLabel: "For industrial engineers and the sewing floor",
     image: "/assets/images/projects/ob-mockup.png",
     headline: "Revolutionising operation bulletin planning",
-    tagline: "Cloud-based OB planning, SMV calculation and production tracking.",
+    tagline: "Plan your production lines faster and more accurately.",
     intro:
       "Quick OB is a user-friendly, cloud-based application that streamlines operation bulletin planning. It simplifies SMV calculation, production planning and performance tracking, reuses data for repeat styles and supports line writers, engineers, supervisors and management.",
     highlights: ["SMV in minutes", "Hour-by-hour tracking", "Skill matrix", "Reuse data for repeat styles"],
@@ -214,6 +214,38 @@ export const products: Product[] = [
     fit: { manufacturers: true, buyingHouses: false, exporters: false, brands: false },
     related: ["garment-erp-knit-woven", "garment-inspection-software", "garment-erp-brands"],
     legacyPath: "/operation_bulletin",
+  },
+  {
+    slug: "target-360-hrms",
+    code: "HRMS",
+    name: "TARGET 360 HRMS",
+    brand: "TARGET 360 HRMS",
+    shortName: "TARGET 360 HRMS",
+    stage: "People & payroll",
+    audience: "manufacturers",
+    audienceLabel: "For HR and admin teams",
+    image: "/images/hrms-mockup.png",
+    headline: "Attendance, payroll and staff records, made simple",
+    tagline: "Handle attendance, payroll and staff records with less effort.",
+    intro:
+      "TARGET 360 HRMS brings attendance, payroll and staff records for your workforce into one system, connected to the rest of TARGET 360. HR teams spend less time on spreadsheets and month-end calculations, and management sees workforce numbers next to production.",
+    highlights: ["Attendance in one place", "Payroll without spreadsheets", "Complete staff records", "Connected to TARGET 360"],
+    features: [
+      { icon: "users", title: "Employee records", text: "Every employee's details, documents and history in one place, easy to search and update." },
+      { icon: "clock", title: "Attendance tracking", text: "Daily attendance, shifts and overtime recorded and ready for payroll." },
+      { icon: "order", title: "Leave management", text: "Leave requests, approvals and balances without paper forms." },
+      { icon: "wallet", title: "Payroll processing", text: "Calculate salaries from attendance and overtime in a few steps each month." },
+      { icon: "invoice", title: "Payslips and reports", text: "Generate payslips and HR reports for management whenever they are needed." },
+      { icon: "lock", title: "Role-based access", text: "HR, managers and staff see only the information they are allowed to." },
+    ],
+    faqs: [
+      { q: "What does TARGET 360 HRMS cover?", a: "Employee records, attendance, leave, payroll, payslips and HR reports, in one system." },
+      { q: "Does it work with the rest of TARGET 360?", a: "Yes. HRMS runs on the same platform as TARGET 360, so workforce data sits alongside your orders and production." },
+      { q: "Can it be set up for our factory's process?", a: "Yes. Our team configures shifts, leave rules and pay components to match how your business works." },
+    ],
+    fit: { manufacturers: true, buyingHouses: true, exporters: true, brands: false },
+    related: ["garment-erp-knit-woven", "operation-bulletin-quick-ob", "garment-inspection-software"],
+    legacyPath: "",
   },
 ];
 

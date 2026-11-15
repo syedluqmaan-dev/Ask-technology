@@ -34,7 +34,7 @@ export function HeroVideo() {
         loop
         playsInline
         preload="metadata"
-        aria-label="ASK Technology TARGET ERP product video"
+        aria-label="ASK Technology TARGET 360 ERP product video"
         style={{ display: "block", width: "100%", height: "auto", aspectRatio: "16 / 9", borderRadius: 12, background: "#F6F9FE" }}
       />
       <button

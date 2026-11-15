@@ -52,10 +52,10 @@ export function LeadForm({ source, button = "Request a call back", product, show
         )}
         {showProduct && (
           <label className="fld full">Product
-            <select name="product" defaultValue={product ?? "Full TARGET suite"}>
+            <select name="product" defaultValue={product ?? "Full TARGET 360 suite"}>
               {products.map((p) => <option key={p.slug}>{p.name}</option>)}
               <option>AI Solution</option>
-              <option>Full TARGET suite</option>
+              <option>Full TARGET 360 suite</option>
             </select>
           </label>
         )}
@@ -66,7 +66,7 @@ export function LeadForm({ source, button = "Request a call back", product, show
       </button>
       {state === "ok" && <p className="form-msg ok" role="status">Thank you. Our team will contact you shortly.</p>}
       {state === "err" && <p className="form-msg err" role="alert">Your message could not be sent. Please call {"+91 98408 99559"} or email sales@asktek.net.</p>}
-      <p className="form-note">We use your details only to contact you about TARGET.</p>
+      <p className="form-note">We use your details only to contact you about TARGET 360.</p>
     </form>
   );
 }

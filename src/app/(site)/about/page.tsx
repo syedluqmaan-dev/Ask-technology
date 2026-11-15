@@ -11,7 +11,7 @@ import type { IconName } from "@/data/products";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "ASK Technology is a Chennai IT company with 25+ years of experience, building TARGET, the AI-powered ERP for the textile and garment industry, alongside IT consulting.",
+    "ASK Technology is a Chennai IT company with 20+ years of experience, building TARGET 360, the AI-powered ERP for the textile and garment industry, alongside IT consulting.",
   alternates: { canonical: "/about" },
 };
 
@@ -30,7 +30,7 @@ const engagement: [IconName, string, string][] = [
   ["clock", "Post-launch maintenance", "Updates and improvements after you go live."],
   ["users", "Technical support", "Help when your team needs it."],
   ["chart", "Consulting services", "Process and technology advice for apparel businesses."],
-  ["spark", "Training and workshops", "Every role trained to get value from TARGET."],
+  ["spark", "Training and workshops", "Every role trained to get value from TARGET 360."],
 ];
 
 export default function AboutPage() {
@@ -46,11 +46,11 @@ export default function AboutPage() {
             </div>
             <p className="lead">
               We are more than an IT services company. ASK Technology is your partner in using technology to drive innovation and growth,
-              with solutions built around your unique needs, led by TARGET, our ERP for the textile and garment industry.
+              with solutions built around your unique needs, led by TARGET 360, our ERP for the textile and garment industry.
             </p>
           </div>
           <div className="stats" style={{ marginTop: 56 }}>
-            <div><strong className="grad-text">25+</strong><span>Years of IT solutions</span></div>
+            <div><strong className="grad-text">20+</strong><span>Years of IT solutions</span></div>
             <div><strong className="grad-text">{clients.length}+</strong><span>Apparel businesses</span></div>
             <div><strong className="grad-text">{caseStudies.length}</strong><span>Customer stories</span></div>
             <div><strong className="grad-text">Chennai</strong><span>Headquarters, India</span></div>
@@ -89,7 +89,7 @@ export default function AboutPage() {
         <div className="wrap">
           <Reveal className="section-head"><p className="eyebrow">What we do</p><h2 className="h2">Two practices, one goal: technology that pays for itself</h2></Reveal>
           <div className="grid g2">
-            <Reveal className="card hover"><span className="ico"><Icon name="factory" /></span><h3 className="h3" style={{ marginTop: 18 }}>Business growth</h3><p className="body" style={{ marginTop: 8 }}>ERP products for the textile, garment and rental management industries that streamline operations and catalyse growth.</p><Link className="link" href="/products">Explore TARGET <Arrow /></Link></Reveal>
+            <Reveal className="card hover"><span className="ico"><Icon name="factory" /></span><h3 className="h3" style={{ marginTop: 18 }}>Business growth</h3><p className="body" style={{ marginTop: 8 }}>ERP products for the textile, garment and rental management industries that streamline operations and catalyse growth.</p><Link className="link" href="/products">Explore TARGET 360 <Arrow /></Link></Reveal>
             <Reveal className="card hover" delay={100}><span className="ico"><Icon name="chart" /></span><h3 className="h3" style={{ marginTop: 18 }}>IT consulting</h3><p className="body" style={{ marginTop: 8 }}>Strategic planning that aligns technology with your business objectives for efficiency and performance.</p><Link className="link" href="/contact">Talk to us <Arrow /></Link></Reveal>
           </div>
         </div>
@@ -113,7 +113,7 @@ export default function AboutPage() {
             <h2 className="h2">Tailored to your project's success</h2>
             <p className="sub" style={{ marginTop: 18 }}>From the first plan to long after go-live, our team stays with you.</p>
             <ul className="ticklist" style={{ marginTop: 26 }}>
-              {["Discover your orders, teams and current systems", "Plan products, data and timelines together", "Configure TARGET to your workflows", "Test with real orders", "Go live with training and support"].map((x) => <li key={x}><Check />{x}</li>)}
+              {["Discover your orders, teams and current systems", "Plan products, data and timelines together", "Configure TARGET 360 to your workflows", "Test with real orders", "Go live with training and support"].map((x) => <li key={x}><Check />{x}</li>)}
             </ul>
           </Reveal>
           <div className="grid g2" style={{ gap: 16 }}>

@@ -28,18 +28,22 @@ export function LogoMark({ id = "lg", bg = "#fff", size = 54 }: { id?: string; b
   );
 }
 
+/** Wordmark colour: ASK deep blue on light backgrounds, white on dark ones. */
+export const LOGO_BLUE = "#2C3E9E";
+
 export function Logo({ compact = false, bg = "#fff", id = "lg" }: Props) {
+  const ink = bg.toLowerCase() === "#fff" || bg.toLowerCase() === "#ffffff" ? LOGO_BLUE : "#fff";
   return (
     <Link href="/" className="logo" aria-label="ASK Technology home">
       <LogoMark id={id} bg={bg} size={compact ? 46 : 54} />
       {!compact && <span className="rule" aria-hidden="true" />}
       <span className="word" aria-hidden="true">
-        <span className="ask" style={compact ? { fontSize: 22 } : undefined}>
+        <span className="ask" style={{ color: ink, ...(compact ? { fontSize: 22 } : {}) }}>
           AS
           <svg viewBox="0 0 58 72">
-            <rect width="15.5" height="72" fill="#17213F" />
+            <rect width="15.5" height="72" style={{ fill: ink }} />
             <polygon points="13,49 41,0 58,0 30,49" fill="#1C97DD" />
-            <polygon points="24,33 58,72 39,72 13,44" fill="#17213F" />
+            <polygon points="24,33 58,72 39,72 13,44" style={{ fill: ink }} />
           </svg>
         </span>
         <span className="tech" style={compact ? { fontSize: 10 } : undefined}>Technology</span>

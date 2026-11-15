@@ -61,4 +61,5 @@ export const productIcon: Record<string, IconName> = {
   "garment-inspection-software": "shield",
   "garment-erp-brands": "swatch",
   "operation-bulletin-quick-ob": "clock",
+  "target-360-hrms": "users",
 };

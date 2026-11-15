@@ -9,9 +9,9 @@ import { Arrow, Check } from "@/components/Icons";
 import { ClientLogos } from "@/components/ClientLogos";
 
 export const metadata: Metadata = {
-  title: "TARGET Garment ERP Products",
+  title: "TARGET 360 Garment ERP Products",
   description:
-    "TARGET products for the apparel industry: Garment ERP for Knit & Woven, Buying House Management, Garment Inspection Software, Garment ERP for Brands and Quick OB, with AI built in.",
+    "TARGET 360 products for the apparel industry: TARGET 360 ERP for Manufacturers, Buying House Management, Inspection On Go, TARGET 360 ERP for Brands, Quick OB and TARGET 360 HRMS, with AI built in.",
   alternates: { canonical: "/products" },
 };
 
@@ -30,9 +30,9 @@ export default function ProductsPage() {
           <nav className="crumbs" aria-label="Breadcrumb"><Link href="/">Home</Link> / <span aria-current="page">Products</span></nav>
           <div className="head-row" style={{ marginBottom: 0 }}>
             <div style={{ maxWidth: 780 }}>
-              <p className="eyebrow">TARGET garment ERP</p>
+              <p className="eyebrow">TARGET 360 garment ERP</p>
               <h1 className="h1">One connected platform for the <span className="grad-text">whole apparel lifecycle</span></h1>
-              <p className="lead" style={{ marginTop: 22 }}>Five TARGET products, with AI built in. Start with the one your business needs most, or run them together on one set of data.</p>
+              <p className="lead" style={{ marginTop: 22 }}>Six TARGET 360 products, with AI built in. Start with the one your business needs most, or run them together on one set of data.</p>
             </div>
             <div className="btn-row">
               <Link className="btn btn-primary" href="/book-a-demo">Book a demo <Arrow /></Link>

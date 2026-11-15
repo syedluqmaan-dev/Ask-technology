@@ -88,7 +88,7 @@ export default async function CaseStudyPage({ params }: Params) {
             <ul className="ticklist" style={{ fontSize: 16.5 }}>
               {c.challenges.map((x) => <li key={x}><span style={{ width: 8, height: 8, borderRadius: 4, background: "#B4540A", marginTop: 9, flex: "none" }} />{x}</li>)}
             </ul>
-            <h2>The impact with {p?.brand ?? "TARGET"}</h2>
+            <h2>The impact with {p?.brand ?? "TARGET 360"}</h2>
             <ul className="ticklist" style={{ fontSize: 16.5 }}>
               {c.impact.map((x) => <li key={x}><Check />{x}</li>)}
             </ul>

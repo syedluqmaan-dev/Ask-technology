@@ -7,7 +7,7 @@ import { ClientLogos } from "@/components/ClientLogos";
 
 export const metadata: Metadata = {
   title: "Customer Stories",
-  description: "How garment manufacturers, exporters, buying houses and brands run their business on TARGET ERP, Target BMS and Quick OB.",
+  description: "How garment manufacturers, exporters, buying houses and brands run their business on TARGET 360 ERP, Target BMS and Quick OB.",
   alternates: { canonical: "/case-studies" },
 };
 
@@ -20,7 +20,7 @@ export default function CaseStudiesPage() {
           <p className="eyebrow">Customer stories</p>
           <h1 className="h1" style={{ maxWidth: 820 }}>Real garment businesses. <span className="grad-text">Real transformations.</span></h1>
           <p className="lead" style={{ marginTop: 22, maxWidth: 680 }}>
-            {caseStudies.length} stories from manufacturers, exporters, buying houses and brands across India and abroad that run on TARGET.
+            {caseStudies.length} stories from manufacturers, exporters, buying houses and brands across India and abroad that run on TARGET 360.
           </p>
         </div>
       </section>
@@ -29,7 +29,7 @@ export default function CaseStudiesPage() {
       </section>
       <ClientLogos />
       <div style={{ height: 112 }} />
-      <DemoBand title="Write your own success story with TARGET" />
+      <DemoBand title="Write your own success story with TARGET 360" />
     </>
   );
 }

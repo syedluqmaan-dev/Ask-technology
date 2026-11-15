@@ -3,7 +3,7 @@ export const site = {
   url: "https://www.asktek.net",
   tagline: "Total Enterprise Solution",
   description:
-    "ASK Technology builds TARGET, the AI-powered garment ERP for manufacturers, exporters, buying houses and fashion brands. From order and costing to production and shipment.",
+    "ASK Technology builds TARGET 360, the AI-powered garment ERP for manufacturers, exporters, buying houses and fashion brands. From order and costing to production and shipment.",
   email: "sales@asktek.net",
   hrEmail: "hr@asktek.net",
   phone: "+91 98408 99559",

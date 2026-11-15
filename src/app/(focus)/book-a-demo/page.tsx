@@ -8,7 +8,7 @@ import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Book a Demo",
-  description: "Book a live online demo of TARGET garment ERP with a product specialist from ASK Technology. Pick the products and a time that suits you.",
+  description: "Book a live online demo of TARGET 360 garment ERP with a product specialist from ASK Technology. Pick the products and a time that suits you.",
   alternates: { canonical: "/book-a-demo" },
 };
 
@@ -26,8 +26,8 @@ export default function BookDemoPage() {
       </header>
       <main id="main" className="wrap book-grid">
         <div>
-          <h1 className="h1" style={{ fontSize: 42 }}>Book your TARGET demo</h1>
-          <p className="sub mt-m">A live walkthrough of TARGET on a workflow like yours, with a product specialist from ASK Technology.</p>
+          <h1 className="h1" style={{ fontSize: 42 }}>Book your TARGET 360 demo</h1>
+          <p className="sub mt-m">A live walkthrough of TARGET 360 on a workflow like yours, with a product specialist from ASK Technology.</p>
           <ul style={{ listStyle: "none", padding: 0, margin: "28px 0 32px", display: "flex", flexDirection: "column", gap: 14, fontSize: 15.5 }}>
             {["[30]-minute online demo, at a time that suits you", "Focused on the products you choose", "Confirmation by email and WhatsApp", "Reschedule any time by replying to us"].map((t) => (
               <li key={t} style={{ display: "flex", gap: 12 }}><Check size={20} />{t}</li>
