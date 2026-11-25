@@ -170,7 +170,75 @@ a.card { text-decoration: none; color: inherit; }
 .trio { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 34px; list-style: none; padding: 0; font-weight: 700; font-size: 15px; color: var(--ink); }
 .trio li { display: flex; align-items: center; gap: 8px; }
 .hero-visual { position: relative; }
-.hero-shot { position: relative; border-radius: 22px; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow-lg); padding: 14px; }
+.hero-shot { position: relative; border-radius: 16px; background: #fff; border: 1px solid var(--line-2); box-shadow: 0 1px 0 rgba(255,255,255,.8) inset, var(--shadow-lg), 0 2px 6px -2px rgba(23, 33, 63, .08); }
+.browser-bar { display: flex; align-items: center; gap: 14px; height: 40px; padding: 0 14px; border-bottom: 1px solid var(--line); background: linear-gradient(180deg, #fbfdff, #f2f6fc); border-radius: 16px 16px 0 0; }
+.browser-dots { display: flex; gap: 6px; flex: none; }
+.browser-dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--line-2); }
+.browser-url { flex: 1; min-width: 0; max-width: 300px; display: flex; align-items: center; gap: 6px; height: 26px; padding: 0 12px; border-radius: 8px; background: #fff; border: 1px solid var(--line); color: var(--muted); font-size: 12.5px; font-weight: 500; }
+.browser-url span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.browser-url b { color: var(--ink); font-weight: 600; }
+.browser-live { flex: none; display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--ok); }
+.browser-live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #22a565; box-shadow: 0 0 0 0 rgba(34, 165, 101, .5); animation: live 2s ease-out infinite; }
+@keyframes live { 0% { box-shadow: 0 0 0 0 rgba(34, 165, 101, .5); } 100% { box-shadow: 0 0 0 8px rgba(34, 165, 101, 0); } }
+.browser-body { position: relative; overflow: hidden; border-radius: 0 0 15px 15px; }
+
+/* Proof cards over the frame edges */
+.float.proof.f1 { left: -44px; bottom: -30px; padding: 12px 18px 12px 12px; }
+.float.proof.f2 { right: -28px; top: -70px; width: 214px; padding: 14px 16px 12px; }
+.proof-k .browser-live { float: right; font-size: 10px; }
+.proof b { display: block; font-family: var(--font-head); font-size: 14px; font-weight: 600; color: var(--ink); letter-spacing: -.01em; }
+.proof-sub { display: block; margin-top: 2px; font-size: 12.5px; font-weight: 600; color: var(--ok); }
+.proof-ok { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--ok-bg); color: var(--ok); flex: none; }
+.proof-k { display: block; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.proof-v { display: flex; align-items: baseline; gap: 8px; margin-top: 4px; font-family: var(--font-head); font-size: 26px; font-weight: 700; letter-spacing: -.02em; color: var(--ink); }
+.proof-v small { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0; color: var(--muted); }
+.proof-spark { display: block; width: 100%; height: 34px; margin-top: 8px; }
+
+/* The seam: a stitched thread through every stage of an order */
+.seam { position: relative; margin-top: 76px; --node: 16px; }
+.seam ol { position: relative; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); list-style: none; margin: 0; padding: 0; }
+.seam li { display: grid; grid-template-rows: var(--node) auto; justify-items: center; row-gap: 14px; }
+.seam-line { position: absolute; top: calc(var(--node) / 2 - 1px); left: calc(100% / 12); right: calc(100% / 12); height: 2px; clip-path: inset(-12px 100% -12px 0); animation: seam-draw 1.8s .5s cubic-bezier(.65, 0, .35, 1) forwards; }
+.seam-line::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, var(--indigo) 0 8px, transparent 8px 14px); opacity: .5; }
+.seam-line::after { content: ""; position: absolute; inset: -4px 0; border-radius: 6px; background: linear-gradient(90deg, rgba(69, 96, 208, .07), rgba(28, 151, 221, .1)); }
+.seam-run { position: absolute; inset: 0; z-index: 2; animation: seam-run 8s 2.4s linear infinite; transform: translateX(0); }
+.seam-run i { position: absolute; top: 50%; left: 0; width: 22px; height: 4px; margin: -2px 0 0 -22px; border-radius: 4px; background: linear-gradient(90deg, transparent, var(--sky)); opacity: 0; animation: seam-fade 8s 2.4s linear infinite; }
+.seam-run i::after { content: ""; position: absolute; right: -3px; top: -3px; width: 10px; height: 10px; border-radius: 50%; background: var(--sky); box-shadow: 0 0 0 4px rgba(28, 151, 221, .18); }
+.seam-node { position: relative; z-index: 1; grid-row: 1; width: var(--node); height: var(--node); border-radius: 50%; background: #fff; border: 2px solid var(--indigo); opacity: 0; transform: scale(.4); animation: seam-pop .45s calc(.6s + var(--i) * .26s) cubic-bezier(.34, 1.56, .64, 1) forwards; }
+.seam-node::after { content: ""; position: absolute; inset: -2px; border-radius: 50%; border: 2px solid var(--sky); opacity: 0; animation: seam-hit 8s calc(2.4s + var(--i) * 8s * .8 / 5) ease-out infinite; }
+.seam-label { grid-row: 2; font-family: var(--font-head); font-size: 14px; font-weight: 600; color: var(--text); white-space: nowrap; opacity: 0; animation: seam-pop-l .5s calc(.7s + var(--i) * .26s) ease forwards; }
+.seam li.done .seam-node { background: var(--ok); border-color: var(--ok); }
+.seam li.done .seam-node::before { content: ""; position: absolute; left: 4px; top: 1px; width: 4px; height: 8px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.seam li.done .seam-label { color: var(--ink); font-weight: 700; }
+@keyframes seam-draw { to { clip-path: inset(-12px 0 -12px 0); } }
+@keyframes seam-run { 0% { transform: translateX(0); } 80%, 100% { transform: translateX(100%); } }
+@keyframes seam-fade { 0% { opacity: 0; } 3%, 78% { opacity: 1; } 86%, 100% { opacity: 0; } }
+@keyframes seam-hit { 0% { opacity: .9; transform: scale(1); } 14% { opacity: 0; transform: scale(2.6); } 100% { opacity: 0; transform: scale(2.6); } }
+@keyframes seam-pop { to { opacity: 1; transform: none; } }
+@keyframes seam-pop-l { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .seam-line { animation: none; clip-path: none; }
+  .seam-run { display: none; }
+  .seam-node, .seam-label { animation: none; opacity: 1; transform: none; }
+  .browser-live::before { animation: none; }
+}
+@media (max-width: 1140px) {
+  .float.proof.f1 { left: 12px; } .float.proof.f2 { right: 12px; }
+}
+@media (max-width: 640px) {
+  .seam { margin-top: 48px; --node: 14px; }
+  .seam li { grid-template-rows: 16px var(--node) 16px; row-gap: 8px; }
+  .seam-line { top: calc(16px + 8px + var(--node) / 2 - 1px); }
+  .seam-node { grid-row: 2; }
+  .seam-label { font-size: 12px; }
+  .seam li:nth-child(odd) .seam-label { grid-row: 3; }
+  .seam li:nth-child(even) .seam-label { grid-row: 1; }
+  .seam li.done .seam-node::before { left: 3px; top: 0; }
+  .browser-bar { height: 34px; padding: 0 10px; gap: 10px; }
+  .browser-dots i { width: 8px; height: 8px; }
+  .browser-url { font-size: 11px; height: 22px; padding: 0 8px; }
+  .browser-live { display: none; }
+}
 .hero-shot img { width: 100%; height: auto; border-radius: 12px; aspect-ratio: 16/9; object-fit: cover; object-position: center; }
 .float { position: absolute; background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 24px 50px -24px rgba(23, 33, 63, .4); padding: 14px 16px; font-size: 13px; line-height: 1.4; animation: bob 6s ease-in-out infinite; }
 .float b { font-size: 13.5px; }
@@ -418,7 +486,6 @@ a.case:hover .cover img { transform: scale(1.04); }
   .btn-row { flex-direction: column; align-items: stretch; }
   .btn-row .btn { width: 100%; }
   .float { display: none; }
-  .hero-shot { padding: 8px; border-radius: 16px; }
   .stats strong { font-size: 34px; }
   .stats > div { padding: 22px 18px; }
   .logo-cell { width: 140px; height: 66px; }

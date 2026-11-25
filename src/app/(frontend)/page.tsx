@@ -15,6 +15,8 @@ import { itemList } from "@/lib/schema";
 
 export const revalidate = 3600;
 
+const LIFECYCLE = ["Enquiry", "Costing", "Sampling", "Production", "QC", "Shipment"];
+
 export async function generateMetadata() {
   const h = await getHome();
   return buildMetadata({
@@ -57,9 +59,21 @@ export default async function HomePage() {
             )}
           </div>
           <div className="hero-visual">
-            <div className="hero-shot">
-              <HeroVideo />
-            </div>
+            <HeroVideo />
+          </div>
+        </div>
+        {/* The seam: one stitched thread through every stage of an order. */}
+        <div className="wrap">
+          <div className="seam">
+            <div className="seam-line" aria-hidden="true"><span className="seam-run"><i /></span></div>
+            <ol aria-label="Every stage of an order, in one system">
+              {LIFECYCLE.map((stage, i) => (
+                <li key={stage} style={{ "--i": i } as React.CSSProperties} className={i === LIFECYCLE.length - 1 ? "done" : undefined}>
+                  <span className="seam-node" aria-hidden="true" />
+                  <span className="seam-label">{stage}</span>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
       </section>
