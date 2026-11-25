@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { products } from "@/data/products";
+import { getAttribution, trackLead } from "./Consent";
+import { Turnstile } from "./Turnstile";
+import { HEARD_FROM } from "@/lib/heard";
 
-const MODULES = [...products.map((p) => ({ id: p.slug, label: p.shortName })), { id: "ai-solution", label: "AI Solution" }, { id: "full-suite", label: "Full suite" }];
 const SLOTS = ["10:00 am", "11:30 am", "2:00 pm", "3:30 pm", "5:00 pm"];
 const ZONES = ["India (IST)", "Bangladesh (BST)", "Sri Lanka (SLST)", "UAE (GST)", "UK (GMT)"];
 
@@ -20,7 +21,11 @@ function nextDays(n = 6) {
   return out;
 }
 
-export function BookingForm() {
+type Mod = { slug: string; shortName: string };
+
+/** Demo request with a preferred date and time. Used when no Cal.com link is set in Site settings. */
+export function BookingForm({ products, phone }: { products: Mod[]; phone: string }) {
+  const MODULES = [...products.map((p) => ({ id: p.slug, label: p.shortName })), { id: "ai-solution", label: "AI Solution" }, { id: "full-suite", label: "Full suite" }];
   const params = useSearchParams();
   const pre = params.get("product");
   const [mods, setMods] = useState<string[]>(pre && MODULES.some((m) => m.id === pre) ? [pre] : []);
@@ -29,6 +34,8 @@ export function BookingForm() {
   const [slot, setSlot] = useState<number | null>(null);
   const [zone, setZone] = useState(ZONES[0]);
   const [state, setState] = useState<"idle" | "sending" | "done" | "err">("idle");
+  const [error, setError] = useState("");
+  const [token, setToken] = useState("");
 
   useEffect(() => setDays(nextDays()), []);
 
@@ -43,15 +50,27 @@ export function BookingForm() {
     e.preventDefault();
     if (slot === null) return;
     setState("sending");
-    const data = Object.fromEntries(new FormData(e.currentTarget).entries());
+    const data = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>;
     try {
-      const res = await fetch("/api/lead", {
+      const res = await fetch("/api/forms/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, source: "book-a-demo", modules: modLabels, date: days[day]?.toISOString().slice(0, 10), slot: SLOTS[slot], zone }),
+        body: JSON.stringify({
+          ...data,
+          type: "demo",
+          product: modLabels.join(", ") || "TARGET 360",
+          preferredSlot: `${days[day]?.toISOString().slice(0, 10)} ${SLOTS[slot]} ${zone}`,
+          page: location.pathname,
+          turnstile: token,
+          source: getAttribution(),
+        }),
       });
-      setState(res.ok ? "done" : "err");
-    } catch {
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(out.error || "");
+      trackLead("generate_lead", { form_type: "demo", product: modLabels.join(", ") });
+      setState("done");
+    } catch (err) {
+      setError((err as Error).message);
       setState("err");
     }
   }
@@ -59,7 +78,7 @@ export function BookingForm() {
   if (state === "done") {
     return (
       <div className="form" style={{ maxWidth: 640, margin: "0 auto", textAlign: "center", padding: 48 }} role="status">
-        <h1 className="h2">Your demo request is in</h1>
+        <h2 className="h2">Your demo request is in</h2>
         <p style={{ marginTop: 10, fontSize: 18, fontWeight: 700 }}>{summary}</p>
         <p className="sub mt-s">{modLabels.join(", ") || "TARGET 360"}. Our team will confirm the time and send the joining link by email and WhatsApp.</p>
         <div className="btn-row mt-l" style={{ justifyContent: "center" }}>
@@ -89,7 +108,7 @@ export function BookingForm() {
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, flexWrap: "wrap", marginBottom: 14 }}>
         <p className="step-title" style={{ margin: 0 }}>Pick a date and time</p>
         <label className="fld" style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
-          <span style={{ fontSize: 13.5, color: "#46516B" }}>Time zone</span>
+          <span style={{ fontSize: 13.5, color: "var(--text)" }}>Time zone</span>
           <select value={zone} onChange={(e) => setZone(e.target.value)} style={{ minHeight: 40 }}>
             {ZONES.map((z) => <option key={z}>{z}</option>)}
           </select>
@@ -118,19 +137,32 @@ export function BookingForm() {
         <label className="fld">Phone or WhatsApp<input name="phone" type="tel" autoComplete="tel" required /></label>
         <label className="fld">Company name<input name="company" autoComplete="organization" /></label>
         <label className="fld">City<input name="city" /></label>
+        <label className="fld">Country<input name="country" autoComplete="country-name" defaultValue="India" /></label>
         <label className="fld">Business type
           <select name="businessType" defaultValue="Apparel manufacturer">
             <option>Apparel manufacturer</option><option>Buying house</option><option>Exporter</option><option>Fashion brand or retailer</option><option>Textile mill</option>
           </select>
         </label>
+        <label className="fld">How did you hear about us?
+          <select name="heardFrom" defaultValue="">
+            <option value="">Choose one (optional)</option>
+            {HEARD_FROM.map((x) => <option key={x}>{x}</option>)}
+          </select>
+        </label>
       </div>
+      <div className="hp" aria-hidden="true"><label>Leave this empty<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
+      <label className="fld-check">
+        <input type="checkbox" name="consent" value="yes" required />
+        <span>I agree that ASK Technology may use these details to arrange my demo, as described in the <Link href="/privacy-policy">privacy policy</Link>.</span>
+      </label>
+      <Turnstile onToken={setToken} />
       <div className="summary">
         <p style={{ fontSize: 15, lineHeight: 1.5 }}><b>{summary}</b><br /><span className="body">{modLabels.join(", ") || "No products selected yet"}</span></p>
         <button className="btn btn-primary" type="submit" disabled={slot === null || state === "sending"}>
           {state === "sending" ? "Booking…" : "Confirm booking"}
         </button>
       </div>
-      {state === "err" && <p className="form-msg err" role="alert">The booking could not be sent. Please call +91 98408 99559.</p>}
+      {state === "err" && <p className="form-msg err" role="alert">{error || `The booking could not be sent. Please call ${phone}.`}</p>}
     </form>
   );
 }

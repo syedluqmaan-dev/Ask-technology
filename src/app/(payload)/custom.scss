@@ -1,0 +1,73 @@
+// ASK Technology CMS theme: clean, light, branded.
+@font-face { font-family: "Manrope"; src: url("../../fonts/manrope-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Manrope"; src: url("../../fonts/manrope-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Manrope"; src: url("../../fonts/manrope-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Sora"; src: url("../../fonts/sora-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+
+:root {
+  --font-body: "Manrope", system-ui, sans-serif;
+  --style-radius-s: 8px;
+  --style-radius-m: 12px;
+  --style-radius-l: 16px;
+  --ask-blue: #4560d0;
+  --ask-sky: #1c97dd;
+  --ask-deep: #2c3e9e;
+  --ask-line: #e4e9f2;
+  --ask-tint: #f5f8fd;
+  --ask-ink: #1c2333;
+  --ask-text: #4a5468;
+  --theme-success-500: #4560d0;
+  --theme-success-600: #2c3e9e;
+}
+
+html[data-theme="light"] {
+  --theme-bg: #f7f9fc;
+  --theme-input-bg: #fff;
+}
+
+h1, h2, h3, .render-title, .doc-header__title { font-family: "Sora", var(--font-body); letter-spacing: -0.015em; }
+
+// Primary buttons in brand gradient
+.btn--style-primary {
+  background: linear-gradient(100deg, var(--ask-blue), var(--ask-sky)) !important;
+  border-color: transparent !important;
+  color: #fff !important;
+  box-shadow: 0 8px 18px -10px rgba(69, 96, 208, 0.7);
+}
+.btn--style-primary:hover { filter: brightness(1.05); }
+
+// Sidebar
+.nav { background: #fff; border-right: 1px solid var(--ask-line); }
+.nav-group__toggle { font-weight: 700; color: var(--ask-ink); }
+.nav__link { border-radius: 8px; }
+.nav__link:hover, .nav__link.active { background: var(--ask-tint); color: var(--ask-deep); }
+
+// Cards and lists
+.card, .collection-list .table, .table table { border-radius: 12px; }
+.table { background: #fff; border: 1px solid var(--ask-line); border-radius: 12px; overflow: hidden; }
+.table thead th { background: var(--ask-tint); font-weight: 700; }
+
+// Login screen
+.template-minimal { background: linear-gradient(180deg, #f5f8fd 0%, #fff 70%); }
+.template-minimal .template-minimal__wrap { background: #fff; border: 1px solid var(--ask-line); border-radius: 20px; padding: 40px; box-shadow: 0 30px 60px -36px rgba(44, 62, 158, 0.34); }
+.ask-login-logo { display: flex; align-items: center; gap: 14px; }
+.ask-login-logo strong { display: block; font-family: "Sora", var(--font-body); font-size: 22px; color: var(--ask-deep); }
+.ask-login-logo span { display: block; font-size: 13px; color: var(--ask-text); margin-top: 2px; }
+
+// Dashboard
+.ask-dash { margin-bottom: 40px; }
+.ask-dash-head h1 { font-size: 30px; margin: 0; color: var(--ask-ink); }
+.ask-dash-head p { margin: 6px 0 0; color: var(--ask-text); }
+.ask-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; margin-top: 24px; }
+.ask-stat { display: block; padding: 20px 22px; background: #fff; border: 1px solid var(--ask-line); border-radius: 14px; text-decoration: none; transition: border-color 0.2s, box-shadow 0.2s; }
+.ask-stat:hover { border-color: #cbd5e4; box-shadow: 0 10px 24px -16px rgba(44, 62, 158, 0.35); }
+.ask-stat strong { display: block; font-family: "Sora", var(--font-body); font-size: 34px; line-height: 1.1; background: linear-gradient(100deg, var(--ask-blue), var(--ask-sky)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.ask-stat span { display: block; margin-top: 4px; font-size: 13.5px; color: var(--ask-text); }
+.ask-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-top: 18px; }
+.ask-tile { display: block; padding: 18px 20px; background: #fff; border: 1px solid var(--ask-line); border-radius: 12px; text-decoration: none; }
+.ask-tile:hover { border-color: var(--ask-deep); }
+.ask-tile b { display: block; color: var(--ask-ink); font-size: 15px; }
+.ask-tile span { display: block; margin-top: 3px; color: var(--ask-text); font-size: 13px; }
+
+// Media library thumbnails in a clean grid look
+.thumbnail { border-radius: 8px; overflow: hidden; background: var(--ask-tint); }

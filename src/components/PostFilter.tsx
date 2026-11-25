@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { posts } from "@/data/blog";
-import { PostCard } from "./Cards";
+import type { Post } from "@/lib/types";
+import { PostCard } from "./ui";
 
 const PAGE = 12;
 
-export function PostFilter() {
+/** Article list with topic tabs and "load more". All articles are also linked from category pages and the sitemap. */
+export function PostFilter({ posts }: { posts: Post[] }) {
   const cats = ["All", ...Array.from(new Set(posts.map((p) => p.category)))];
   const [cat, setCat] = useState("All");
   const [shown, setShown] = useState(PAGE);
@@ -22,7 +23,8 @@ export function PostFilter() {
         <span className="small" aria-live="polite">{list.length} articles</span>
       </div>
       <div className="grid g3">
-        {list.slice(0, shown).map((p) => <div key={p.id} style={{ display: "grid" }}><PostCard p={p} /></div>)}
+        {/* Every article stays in the HTML so search engines can find it; extra ones are hidden until "Load more". */}
+        {list.map((p, i) => <div key={p.slug} style={{ display: "grid" }} hidden={i >= shown}><PostCard p={p} /></div>)}
       </div>
       {shown < list.length && (
         <div style={{ textAlign: "center", marginTop: 40 }}>
