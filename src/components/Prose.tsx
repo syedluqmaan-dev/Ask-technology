@@ -2,9 +2,11 @@ import { RichText } from "@payloadcms/richtext-lexical/react";
 import type { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
 import type { Rich, Settings } from "@/lib/types";
 import { fillTokens } from "@/lib/format";
+import { normalizeHeadings } from "@/lib/headings";
 
 /** Article and legal body: Lexical JSON from the CMS, or HTML from the built-in defaults. Fills {{tokens}} from settings. */
-export function Prose({ body, s }: { body: Rich; s?: Settings }) {
+export function Prose({ body: raw, s }: { body: Rich; s?: Settings }) {
+  const body = normalizeHeadings(raw);
   if (body.lexical) {
     const data = s ? (JSON.parse(fillTokens(JSON.stringify(body.lexical), s)) as SerializedEditorState) : (body.lexical as SerializedEditorState);
     return (

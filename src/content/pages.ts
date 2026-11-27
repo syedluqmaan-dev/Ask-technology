@@ -52,11 +52,11 @@ export type HomeContent = {
 
 export const home: HomeContent = {
   heroPill: { label: "AI-Powered Apparel ERP", href: "/ai-solution" },
-  heroTitle: "Garment ERP software that runs every order from enquiry to shipment",
-  heroAccent: "from enquiry to shipment",
+  heroTitle: "Target 360° ERP – A Complete AI-Powered ERP Solution for Knit & Woven Apparel Manufacturers",
+  heroAccent: "AI-Powered ERP Solution",
   heroLead:
-    "An AI-powered garment ERP built for the complete lifecycle. From order and costing to production and shipment, manage everything in one intelligent platform. Reduce costs, improve productivity and predict problems.",
-  heroPoints: ["AI-powered", "Apparel-focused", "Built for growth"],
+    "Manage your entire apparel manufacturing journey, from enquiry and costing to procurement, inventory, production, quality and shipment — all through one integrated platform.",
+  heroPoints: ["Highly Customizable", "Intuitive & User-Friendly", "Fully Integrated End-to-End", "AI-Powered Intelligence", "100% Cloud-Based Platform"],
   heroPrimary: { label: "Book a free demo", href: "/book-a-demo" },
   heroSecondary: { label: "Explore products", href: "/products" },
   heroNote: "",
@@ -73,12 +73,12 @@ export const home: HomeContent = {
   ],
   problemBridge: "TARGET 360 joins every hand-off into one record.",
   routeEyebrow: "From order to the shipment",
-  routeTitle: "Target Suite: One Software for the Apparel Value Chain",
+  routeTitle: "Target 360°: One Connected Software Platform for the Apparel Industry",
   // Direct answer (40–60 words) for Google featured snippets and AI assistants.
   routeLead:
-    "TARGET 360 is a suite of garment ERP software from ASK Technology for apparel manufacturers, exporters, buying houses and fashion brands. Five connected products cover costing and orders, sampling, quality inspection, buying house management and production, all on one database, so you can start with one product and add the rest as you grow.",
+    "Target 360° is a suite of apparel ERP solutions from ASK Technology, built for garment manufacturers, exporters, buying houses and fashion brands: Target 360 ERP, Target 360 Brands, Target Inspection On Go, Target BMS and Quick OB.",
   route: [
-    { stage: "Target 360", headline: "Win the order. Keep the margin.", text: "Run costing, sampling, orders, and shipment in one system.", tag: "Order to shipment", product: "garment-erp-knit-woven", icon: "factory" },
+    { stage: "Target 360 ERP", headline: "Win the order. Keep the margin.", text: "Run costing, sampling, orders, and shipment in one system.", tag: "Order to shipment", product: "garment-erp-knit-woven", icon: "factory" },
     { stage: "Target 360 Brands", headline: "From sample to style, faster.", text: "Track samples, tech packs, and approvals for retail and local brands.", tag: "Sampling", product: "garment-erp-brands", icon: "swatch" },
     { stage: "Target Inspection On Go", headline: "Inspect anywhere. Report instantly.", text: "Garment and fabric quality checks, online or offline, with PDF reports.", tag: "Quality", product: "garment-inspection-software", icon: "shield" },
     { stage: "Target BMS", headline: "Buyers, factories, margins. One view.", text: "Run your buying house from costing to payment.", tag: "Sourcing", product: "buying-house-management", icon: "tag" },
@@ -104,9 +104,9 @@ export const home: HomeContent = {
   proofClient: "",
   proofCase: "",
   storiesTitle: "Garment businesses running on TARGET 360",
-  whyTitle: "Technology that understands the factory floor",
+  whyTitle: "Why Choose ASK Technology",
   whyLead:
-    "ASK Technology designs, implements and supports TARGET 360 itself. Before anything is configured, we learn your orders, your teams and the systems you use today.",
+    "At ASK Technology, we understand that the right technology partner can make all the difference. Here's why we stand out in the crowded tech landscape.",
   why: [
     { icon: "factory", title: "Made for apparel, nothing else", text: "Styles, colourways, size ratios, BOMs, SMV, AQL and T&A are built into every screen. Your team never has to translate the garment business into generic ERP terms." },
     { icon: "layers", title: "Fitted to how you already work", text: "We configure TARGET 360 around your existing process, from a single factory to a buying house with many vendors, instead of asking your teams to change theirs." },

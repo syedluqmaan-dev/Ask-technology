@@ -9,6 +9,7 @@ import { getPost, getPosts, getSettings } from "@/lib/cms";
 import { buildMetadata } from "@/lib/seo";
 import { article } from "@/lib/schema";
 import { fmtDate, tocFromHtml } from "@/lib/format";
+import { normalizeHeadings } from "@/lib/headings";
 
 export const revalidate = 3600;
 export const dynamicParams = true;
@@ -39,7 +40,8 @@ export default async function PostPage({ params }: Props) {
   const { slug } = await params;
   const [s, p, all] = await Promise.all([getSettings(), getPost(slug), getPosts()]);
   if (!p) notFound();
-  const toc = p.body.html ? tocFromHtml(p.body.html) : [];
+  const html = normalizeHeadings(p.body).html;
+  const toc = html ? tocFromHtml(html) : [];
   const related = all.filter((x) => x.slug !== p.slug && x.categorySlug === p.categorySlug).slice(0, 3);
   const more = related.length >= 3 ? related : [...related, ...all.filter((x) => x.slug !== p.slug && !related.includes(x))].slice(0, 3);
 

@@ -34,6 +34,7 @@ export default async function CategoryPage({ params }: Props) {
       <PageHero s={s} crumbs={[{ name: "Insights", path: "/insights" }, { name: c.name, path: `/insights/category/${c.slug}` }]} eyebrow="Insights" title={c.name} lead={c.description} />
       <section className="section" style={{ paddingTop: 48 }}>
         <div className="wrap">
+          <h2 className="sr-only">{c.name} articles</h2>
           <div className="filter-row">
             <nav className="tabs" aria-label="Topics" style={{ marginBottom: 0 }}>
               <Link className="tab" href="/insights" style={{ display: "inline-flex", alignItems: "center", textDecoration: "none" }}>All</Link>

@@ -28,7 +28,7 @@ export const settings: Settings = {
     { label: "Instagram", url: "https://www.instagram.com/targetbyasktek" },
   ],
   footerAbout:
-    "ASK Technology builds TARGET 360, the AI-powered ERP for garment manufacturers, exporters, buying houses and fashion brands. Total Enterprise Solution.",
+    "ASK Technology builds Target 360°, the AI-powered ERP for garment manufacturers, exporters, buying houses and fashion brands. One total enterprise solution, from enquiry to shipment.",
   footerCountries: [
     { label: "UK", href: "/locations/united-kingdom" },
     { label: "BANGLADESH", href: "/locations/bangladesh" },

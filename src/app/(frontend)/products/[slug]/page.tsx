@@ -116,7 +116,7 @@ export default async function ProductPage({ params }: Props) {
               <h2 className="h2">{p.problems.title}</h2>
               {p.problems.lead && <p className="sub">{p.problems.lead}</p>}
             </Reveal>
-            <div className="grid g3 problems">
+            <div className="grid g3 problems stack-m">
               {p.problems.items.map((x, i) => (
                 <Reveal key={x.title} className={`problem${x.without || x.with ? " vs" : ""}`} delay={(i % 3) * 70}>
                   <h3>{x.title}</h3>
@@ -136,7 +136,7 @@ export default async function ProductPage({ params }: Props) {
         <section className="section bg-tint">
           <div className="wrap">
             <Reveal className="section-head"><p className="eyebrow">Why it fits</p><h2 className="h2">{p.benefitsTitle}</h2>{p.benefitsLead && <p className="sub">{p.benefitsLead}</p>}</Reveal>
-            <div className={`grid g${p.benefits.length === 4 ? 4 : 3}`}>
+            <div className={`grid g${p.benefits.length === 4 ? 4 : 3} stack-m`}>
               {p.benefits.map((b, i) => (
                 <Reveal key={b.title} className="card" delay={(i % 4) * 70}><h3 className="h3" style={{ fontSize: 18 }}>{b.title}</h3><p className="body" style={{ marginTop: 8 }}>{b.text}</p></Reveal>
               ))}
@@ -153,7 +153,7 @@ export default async function ProductPage({ params }: Props) {
               <h2 className="h2">{p.modes.title}</h2>
               {p.modes.lead && <p className="sub">{p.modes.lead}</p>}
             </Reveal>
-            <Reveal className={`modes g${Math.min(p.modes.items.length, 3)}`}>
+            <Reveal className={`modes g${Math.min(p.modes.items.length, 3)} stack-m`}>
               {p.modes.items.map((m) => (
                 <div key={m.title} className="mode">
                   <h3 className="h3">{m.title}</h3>
@@ -174,7 +174,7 @@ export default async function ProductPage({ params }: Props) {
         <section className="section bg-tint" id="how">
           <div className="wrap">
             <Reveal className="section-head"><p className="eyebrow">How it works</p><h2 className="h2">{p.quickSteps.title}</h2>{p.quickSteps.lead && <p className="sub">{p.quickSteps.lead}</p>}</Reveal>
-            <ol className={`quick-steps grid g${Math.min(p.quickSteps.items.length, 4)}`}>
+            <ol className={`quick-steps grid g${Math.min(p.quickSteps.items.length, 4)} stack-m`}>
               {p.quickSteps.items.map((x, i) => (
                 <Reveal as="li" key={x.title} delay={i * 80}>
                   <span className="qs-n grad-text">{i + 1}</span>
@@ -198,7 +198,7 @@ export default async function ProductPage({ params }: Props) {
               </Reveal>
             )}
             {p.steps && p.steps.length > 0 && (
-              <ol className={`steps grid g${p.steps.length === 4 ? 4 : 3}`} style={{ gap: 16 }}>
+              <ol className={`steps grid g${p.steps.length === 4 ? 4 : 3} stack-m`} style={{ gap: 16 }}>
                 {p.steps.map((line, i) => {
                   const [title, text] = line.split(" | ");
                   return (
@@ -257,7 +257,7 @@ export default async function ProductPage({ params }: Props) {
               ? p.featuresLead && <p className="sub">{p.featuresLead}</p>
               : p.intro !== p.answer && <p className="sub">{p.intro}</p>}
           </Reveal>
-          <div className="grid g3">
+          <div className="grid g3 stack-m">
             {p.features.map((f, i) => (
               <Reveal key={f.title} className="feat" delay={(i % 3) * 70}>
                 <span className="ico"><Icon name={f.icon ?? "layers"} /></span>
@@ -273,7 +273,7 @@ export default async function ProductPage({ params }: Props) {
         <section className="section bg-tint">
           <div className="wrap">
             <Reveal className="section-head"><p className="eyebrow">For every role</p><h2 className="h2">{p.rolesTitle || "One app for everyone on the floor"}</h2></Reveal>
-            <div className="grid g4">
+            <div className="grid g4 stack-m">
               {p.roles.map((r) => (
                 <Reveal key={r.title} className="card">
                   <h3 className="h3" style={{ fontSize: 18 }}>{r.title}</h3>
@@ -292,7 +292,7 @@ export default async function ProductPage({ params }: Props) {
         <section className="section bg-tint">
           <div className="wrap">
             <Reveal className="section-head"><p className="eyebrow">Benefits</p><h2 className="h2">What your team gains</h2></Reveal>
-            <div className="grid g3">
+            <div className="grid g3 stack-m">
               {p.benefits.map((b) => (
                 <Reveal key={b.title} className="card"><h3 className="h3" style={{ fontSize: 18 }}>{b.title}</h3><p className="body" style={{ marginTop: 8 }}>{b.text}</p></Reveal>
               ))}
@@ -305,7 +305,7 @@ export default async function ProductPage({ params }: Props) {
         <section className="section">
           <div className="wrap">
             <Reveal className="section-head"><p className="eyebrow">How it works</p><h2 className="h2">How an order moves through {p.shortName}</h2><p className="sub">Every step records planned and actual dates, so delays show up early.</p></Reveal>
-            <ol className="steps grid g3" style={{ gap: 16 }}>
+            <ol className="steps grid g3 stack-m" style={{ gap: 16 }}>
               {p.steps.map((x, i) => <Reveal as="li" key={x}><span className="n">Step {i + 1}</span><h3>{x}</h3></Reveal>)}
             </ol>
           </div>
@@ -342,7 +342,7 @@ export default async function ProductPage({ params }: Props) {
         <section className="section bg-tint">
           <div className="wrap">
             <Reveal className="head-row"><div><p className="eyebrow">Solutions</p><h2 className="h2">What teams use {p.shortName} for</h2></div><Link className="btn btn-ghost" href="/solutions">All solutions <Arrow /></Link></Reveal>
-            <div className="grid g3">
+            <div className="grid g3 stack-m">
               {uses.map((u) => (
                 <Link key={u.slug} href={`/solutions/${u.slug}`} className="card" style={{ gap: 10 }}>
                   <b style={{ fontSize: 17 }}>{u.name}</b>
@@ -359,7 +359,7 @@ export default async function ProductPage({ params }: Props) {
         <section className={`section${uses.length ? "" : " bg-tint"}`}>
           <div className="wrap">
             <Reveal className="head-row"><div><p className="eyebrow">Customer stories</p><h2 className="h2">Running on {p.shortName}</h2></div><Link className="btn btn-ghost" href="/case-studies">All stories <Arrow /></Link></Reveal>
-            <div className="grid g3">{stories.map((c) => <Reveal key={c.slug} style={{ display: "grid" }}><CaseCard c={c} logo={logo(c.client)} /></Reveal>)}</div>
+            <div className="grid g3 stack-m">{stories.map((c) => <Reveal key={c.slug} style={{ display: "grid" }}><CaseCard c={c} logo={logo(c.client)} /></Reveal>)}</div>
           </div>
         </section>
       )}
@@ -368,7 +368,7 @@ export default async function ProductPage({ params }: Props) {
         <section className={`section${stories.length ? " bg-tint" : ""}`}>
           <div className="wrap">
             <Reveal className="head-row"><div><p className="eyebrow">Industries</p><h2 className="h2">Built for your part of the industry</h2></div><Link className="btn btn-ghost" href="/industries">All industries <Arrow /></Link></Reveal>
-            <div className={`grid g${fits.length >= 4 ? 4 : 3}`}>
+            <div className={`grid g${fits.length >= 4 ? 4 : 3} stack-m`}>
               {fits.map((x) => (
                 <Link key={x.slug} href={`/industries/${x.slug}`} className="card industry-card">
                   <b>{x.name}</b>

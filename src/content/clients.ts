@@ -1,8 +1,8 @@
 /**
  * Client logos (from the "Our Partners" section of asktek.net).
  *
- * Files are served from /public/cms/partner/<file>. Until a file is added there, next.config.ts
- * falls back to ASK's existing CMS, so every logo shows from day one.
+ * Files are in /public/cms/partner/<file>, copied from the old website manager.
+ * `npm run import:legacy` loads them into the CMS media library.
  */
 import type { Client } from "@/lib/types";
 
@@ -31,6 +31,8 @@ export const clients: Client[] = [
   { name: "Teeparam", logo: cms("Img_1745480669116.png") },
   { name: "Royal Stitch", logo: cms("Img_1745480632389.jpeg"), caseStudy: "royal-stitch-target-erp" },
   { name: "Echo Sourcing", logo: cms("Img_1745480552147.jpeg"), caseStudy: "echo-sourcing-asktek-bms" },
+  { name: "Harpa Retail", logo: cms("harpa-retail.png"), caseStudy: "harpa-retail-plm-erp" },
+  { name: "Beeku Exports", logo: cms("beeku-exports.png"), caseStudy: "beeku-export-erp-quick-ob" },
 ];
 
 export const logoFor = (name: string) => {

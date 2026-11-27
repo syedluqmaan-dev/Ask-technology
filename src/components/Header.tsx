@@ -160,7 +160,7 @@ function Mega({ id, products, stories, storyCount, address }: { id: Exclude<Menu
           </div>
           <Link className="mega-feature" href="/ai-solution">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/images/projects/erp-mockup.png" alt="" />
+            <img src="/images/target-360-dashboard.png" alt="" width={1358} height={629} loading="lazy" />
             <b style={{ fontSize: 16 }}>AI-Powered Fashion ERP</b>
             <span className="small">Smart search, techpack data conversion, smarter sales and intelligent planning.</span>
             <span className="link">Explore AI Solution <Arrow /></span>
