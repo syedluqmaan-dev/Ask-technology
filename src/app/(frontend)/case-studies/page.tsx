@@ -29,6 +29,7 @@ export default async function CasesPage() {
       />
       <section className="section" style={{ paddingTop: 48 }}>
         <div className="wrap">
+          <h2 className="sr-only">All customer stories</h2>
           <CaseFilter items={cases} options={products.map((p) => ({ slug: p.slug, label: p.shortName }))} logos={logos} />
         </div>
       </section>

@@ -486,6 +486,8 @@ export interface Media {
    */
   alt: string;
   caption?: string | null;
+  prefix?: string | null;
+  _objectKey?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -1334,6 +1336,8 @@ export interface JobApplication {
 export interface Resume {
   id: number;
   applicant?: string | null;
+  prefix?: string | null;
+  _objectKey?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -1355,6 +1359,8 @@ export interface Resume {
 export interface Document {
   id: number;
   title: string;
+  prefix?: string | null;
+  _objectKey?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -2158,6 +2164,8 @@ export interface JobApplicationsSelect<T extends boolean = true> {
  */
 export interface ResumesSelect<T extends boolean = true> {
   applicant?: T;
+  prefix?: T;
+  _objectKey?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -2177,6 +2185,8 @@ export interface ResumesSelect<T extends boolean = true> {
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
   caption?: T;
+  prefix?: T;
+  _objectKey?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -2229,6 +2239,8 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface DocumentsSelect<T extends boolean = true> {
   title?: T;
+  prefix?: T;
+  _objectKey?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;

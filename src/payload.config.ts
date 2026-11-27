@@ -51,7 +51,11 @@ export default buildConfig({
     importMap: { baseDir: path.resolve(dirname) },
     components: {
       graphics: { Logo: "/cms/admin/Logo#Logo", Icon: "/cms/admin/Logo#Icon" },
-      beforeDashboard: ["/cms/admin/Dashboard#Dashboard"],
+      beforeLogin: ["/cms/admin/LoginExtras#BeforeLogin"],
+      afterLogin: ["/cms/admin/LoginExtras#AfterLogin"],
+      views: { dashboard: { Component: "/cms/admin/Dashboard#Dashboard" } },
+      beforeNavLinks: ["/cms/admin/NavExtras#NavHeader"],
+      logout: { Button: "/cms/admin/NavExtras#SignOut" },
     },
     livePreview: {
       url: ({ data, collectionConfig, globalConfig }) =>

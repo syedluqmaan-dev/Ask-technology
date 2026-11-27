@@ -7,7 +7,8 @@ const isProd = process.env.VERCEL_ENV ? process.env.VERCEL_ENV === "production" 
 /** Content-Security-Policy for the public website (the CMS at /admin uses its own). */
 const csp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://app.cal.com https://challenges.cloudflare.com https://snap.licdn.com",
+  // 'unsafe-eval' only in `next dev`: React uses eval() for dev-mode debugging, never in production builds.
+  `script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === "development" ? " 'unsafe-eval'" : ""} https://www.googletagmanager.com https://www.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://app.cal.com https://challenges.cloudflare.com https://snap.licdn.com`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https:",
   "font-src 'self' data:",
@@ -63,6 +64,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
     formats: ["image/avif", "image/webp"],
+    qualities: [75, 90],
     minimumCacheTTL: 60 * 60 * 24 * 30,
     remotePatterns: [
       ...(LEGACY ? [{ protocol: "https" as const, hostname: new URL(LEGACY).hostname }] : []),

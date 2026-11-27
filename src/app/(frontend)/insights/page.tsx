@@ -27,7 +27,7 @@ export default async function InsightsPage() {
         lead={`${posts.length} articles on apparel ERP, quality control, production planning, AI and industry news.`}
       />
       <section className="section" style={{ paddingTop: 48 }}>
-        <div className="wrap"><PostFilter posts={sorted} /></div>
+        <div className="wrap"><h2 className="sr-only">All articles</h2><PostFilter posts={sorted} /></div>
       </section>
       <DemoBand />
       <JsonLd data={itemList(s, "Insights", sorted.slice(0, 50).map((p) => ({ name: p.title, path: `/insights/${p.slug}` })))} />

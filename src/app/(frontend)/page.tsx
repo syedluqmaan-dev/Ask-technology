@@ -46,7 +46,7 @@ export default async function HomePage() {
         <div className="wrap hero-grid">
           <div>
             <Link className="pill" href={h.heroPill.href}><span>New</span>{h.heroPill.label} <Arrow /></Link>
-            <h1 className={`h1${h.heroTitle.length > 48 ? " long" : ""}`}><Accent text={h.heroTitle} accent={h.heroAccent} /></h1>
+            <h1 className={`h1${h.heroTitle.length > 80 ? " long xlong" : h.heroTitle.length > 48 ? " long" : ""}`}><Accent text={h.heroTitle} accent={h.heroAccent} /></h1>
             <p className="lead">{h.heroLead}</p>
             <div className="btn-row" style={{ marginTop: 36 }}>
               <Link className="btn btn-primary" href={h.heroPrimary.href}>{h.heroPrimary.label} <Arrow /></Link>
@@ -69,7 +69,7 @@ export default async function HomePage() {
             <ol aria-label="Every stage of an order, in one system">
               {LIFECYCLE.map((stage, i) => (
                 <li key={stage} style={{ "--i": i } as React.CSSProperties} className={i === LIFECYCLE.length - 1 ? "done" : undefined}>
-                  <span className="seam-node" aria-hidden="true" />
+                  <span className="seam-node" aria-hidden="true"><span className="seam-check" /></span>
                   <span className="seam-label">{stage}</span>
                 </li>
               ))}

@@ -11,14 +11,14 @@ One app serves the public website and the CMS at `/admin`. Publishing in the CMS
 
 1. **Run it on your computer:** steps 1 to 7 below. Fix any install or build error first and send it to us if needed.
 2. **Deploy a preview on Vercel** with the same environment variables. Open `/admin` on the preview link and create the first Admin account.
-3. **Run `npm run seed`, then `npm run import:legacy`** against the preview database, so all content, client logos, product screens and old articles are in the CMS.
+3. **Run `npm run seed`, then `npm run import:legacy`** against the preview database, so all content, client logos, testimonials, brochures and old articles are in the CMS.
 4. **Internal check:** go through every page on phone and laptop and submit each form once (you should get both emails).
 5. **Review session with Mr. Shahab** on the preview link. Make his changes in the CMS (or the code for layout changes).
 6. **ASK approval**, then point asktek.net to Vercel (go-live checklist below).
 7. **Submit the sitemap** in Google Search Console and Bing, and request indexing of the home and product pages.
 
 ### Client logos
-Logos are shown on the home and About pages from **CMS → Customers → Client logos**. Until `npm run import:legacy` copies them into the CMS, they load from the old website (via `LEGACY_ORIGIN`). If a logo can't be loaded, the client's name is shown in its place, so the grid never looks broken. ASK can add or replace logos any time in the CMS.
+Logos are shown on the home and About pages from **CMS → Customers → Client logos**. The logo files are in `public/cms/partner/`, and `npm run import:legacy` copies them into the CMS media library. If a logo can't be loaded, the client's name is shown in its place, so the grid never looks broken. ASK can add or replace logos any time in the CMS.
 
 ---
 
@@ -58,13 +58,20 @@ npm run seed
 
 This loads products, 11 solution pages, 6 industry pages, 5 country and 30 city pages, 16 customer stories, 34 glossary terms, 3 guides, 7 legal pages and every website page.
 
-### 6. Bring across the old site's articles and images (needs internet, run once)
+### 6. Bring across the old site's content (run once)
 
 ```bash
-npx playwright install chromium && npm run import:legacy
+npm run import:legacy
 ```
 
-This imports the 61 old articles with their old IDs, so `/blog-details?id=…` links redirect to the new article pages. It also moves product screens, client logos and case-study images into the media library. Check each imported article in CMS → Blog → Articles.
+This loads everything copied from ASK's old website manager, which is already in this project, so no internet or browser is needed:
+
+- the 60 old articles with their old IDs, so `/blog-details?id=…` links redirect to the new article pages (`src/content/legacyArticles.json`, images in `public/cms/blog/`)
+- client logos and case-study images into the media library (`public/cms/partner/`, `public/cms/case-study/`)
+- 12 customer testimonials with their logos: 6 published, 6 saved as drafts for ASK to confirm (`src/content/testimonials.ts`)
+- 5 product brochures into Settings → Documents (`public/brochures/`). Choose one in Site settings → Trust and brochure.
+
+Check each imported article in CMS → Blog → Articles.
 
 ### 7. Run it
 

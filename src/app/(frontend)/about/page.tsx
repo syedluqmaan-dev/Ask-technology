@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { DemoBand } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
@@ -9,6 +10,9 @@ import { getAbout, getCaseStudies, getClients, getSettings } from "@/lib/cms";
 import { buildMetadata } from "@/lib/seo";
 
 export const revalidate = 3600;
+
+/** Used until a CEO photo is uploaded in the CMS (About page → CEO photo). */
+const CEO_PHOTO = "/images/team/mohammed-salahuddin.webp";
 
 export async function generateMetadata() {
   const a = await getAbout();
@@ -55,11 +59,20 @@ export default async function AboutPage() {
 
       <section className="section bg-tint" id="leadership">
         <div className="wrap leader">
-          <div className="photo" style={{ overflow: "hidden" }}>
-            {a.ceoPhoto
-              ? <Img src={a.ceoPhoto} alt="Mohammed Salahuddin, Founder and CEO of ASK Technology" width={600} height={750} sizes="300px" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-              : <span className="small" style={{ padding: 24, textAlign: "center" }}>CEO photo</span>}
-          </div>
+          <Reveal className="leader-photo">
+            <figure className="photo">
+              <Image
+                src={a.ceoPhoto || CEO_PHOTO}
+                alt="Mohammed Salahuddin, Founder and CEO of ASK Technology"
+                fill
+                quality={90}
+                sizes="(max-width: 900px) 320px, 400px"
+                style={{ objectFit: "cover", objectPosition: "center 60%" }}
+                unoptimized={!!a.ceoPhoto && /^https?:\/\//.test(a.ceoPhoto)}
+              />
+            </figure>
+            <span className="leader-badge" aria-hidden="true"><b>20+ years</b>Apparel &amp; IT experience</span>
+          </Reveal>
           <Reveal>
             <p className="eyebrow">Meet our CEO</p>
             <h2 className="h2">Mohammed Salahuddin</h2>
